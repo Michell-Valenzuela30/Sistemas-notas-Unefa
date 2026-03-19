@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    <style>
+        body {
+            font-family: sans-serif; /* Fuente de letra general */
+            margin: 0; /* Elimina márgenes predeterminados del cuerpo */
+            background-color: #f0f4f8; /* Color de fondo suave */
+        }
+
+    /* ---------------ESTILOS BARRA DE NAVEGACION --------------------------------  */
+        .navbar {
+            background-color: #4CAF50; /* Azul suave */
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between; /* Alinea elementos a los extremos */
+            align-items: center; /* Centra verticalmente */
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5em;
+            color: white;
+            text-decoration: none;
+        }
+
+        .navbar-nav {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .nav-item {
+            margin-left: 20px; /* Espacio entre elementos de menú */
+            position: relative; /* Para el dropdown */
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px; /* Ajusta el padding para mejor apariencia */
+            display: block; /* Para que los elementos li ocupen todo el ancho */
+            border-radius: 5px; /* Bordes redondeados */
+            background: linear-gradient(25deg, #13a918, #4CAF50); /* Degradado de verde claro a verde oscuro */
+            transition: background 0.3s, color 0.3s; /* Transiciones suaves */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.2); /* Fondo blanco semitransparente */
+            transition: all 0.5s;
+            z-index: 0;
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+        }
+
+        .nav-link:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 0.5;
+        }
+
+        .nav-link:hover {
+            color: #fff; /* Mantiene el color blanco al hacer hover */
+        }
+
+        .dropdown-menu {
+            display: none; /* Oculto por defecto */
+            position: absolute;
+            background-color: #4CAF50; /* Color de fondo del menú desplegable */
+            color: white;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            top: 100%; /* Se despliega debajo del elemento padre */
+            left: 0;
+            z-index: 1; /* Asegura que esté por encima de otros elementos */
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
+        }
+
+        .nav-item:hover .dropdown-menu {
+            display: block; /* Muestra el menú al pasar el mouse */
+        }
+
+        .dropdown-menu li {
+            padding: 5px 10px;
+        }
+
+        .dropdown-menu a {
+            color: white;
+            text-decoration: none;
+            display: block; /* Para que los links del dropdown ocupen todo el ancho */
+            padding: 5px 10px; /* Espaciado para los enlaces del dropdown */
+            transition: background 0.3s; /* Transición suave para el fondo */
+        }
+
+        .dropdown-menu a:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Fondo más oscuro al pasar el mouse */
+        }
+
+        .main-content {
+            padding: 20px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 5px; /* Bordes redondeados */
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+
+        h1 {
+            color: #343a40; /* Color de texto más oscuro */
+ }
+  /* ---------------ESTILOS BARRA DE NAVEGACION --------------------------------  */
+    </style>
+</head>
+<body>
+    <!-- BARRA NAVEGACION -->
+    <nav class="navbar">
+        <a href="#" class="navbar-brand"> UNEFA</a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Estudiantes</a>
+                <ul class="dropdown-menu">
+                    <li><a href="frontend/vista/registrar_estudiante.php" class="nav-link">Registrar Estudiante</a></li>
+                    <li><a href="frontend/vista/mostrar_estudiantes.php" class="nav-link">Mostrar Estudiantes</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Notas</a>
+                <ul class="dropdown-menu">
+                    <li><a href="frontend/vista/mostrar_notas.php" class="nav-link">Mostrar Notas</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Profesores</a>
+                <ul class="dropdown-menu">
+                    <li><a href="frontend/vista/registrar_profesor.php" class="nav-link">Registrar Profesor</a></li>
+                    <li><a href="frontend/vista/mostrar_profesores.php" class="nav-link">Mostrar Profesores</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Materias</a>
+                <ul class="dropdown-menu">
+                    <li><a href="frontend/vista/registrar_materia.php" class="nav-link">Registrar Materias</a></li>
+                    <li><a href="frontend/vista/mostrar_materia.php" class="nav-link">listar Materias</a></li>
+
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <!-- BARRA NAVEGACION -->
+
+    <div class="main-content">
+        <h1>Bienvenido</h1>
+        <p>Gestiona estudiantes y profesores de manera eficiente.</p>
+    </div>
+</body>
+</html>
